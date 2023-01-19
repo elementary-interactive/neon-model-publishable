@@ -2,7 +2,9 @@
 
 namespace Neon\Models\Scopes;
 
-class PublishedScope
+use Illuminate\Database\Eloquent\Scope;
+
+class PublishedScope implements Scope
 {
   /**
    * All of the extensions to be added to the builder.
