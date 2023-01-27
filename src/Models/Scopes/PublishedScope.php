@@ -45,7 +45,7 @@ class PublishedScope implements Scope
         function ($sub_query) use ($model) {
           $sub_query
             ->whereNull($model->getQualifiedExpiredAtColumn())
-            ->orWhere($model->getQualifiedExpirededAtColumn(), '>', now());
+            ->orWhere($model->getQualifiedExpiredAtColumn(), '>', now());
         }
       );
   }
