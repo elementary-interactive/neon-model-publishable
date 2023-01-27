@@ -187,7 +187,7 @@ trait Publishable
    *
    * @return string
    */
-  public function getQualifiedExpirededAtColumn()
+  public function getQualifiedExpiredAtColumn()
   {
     return $this->qualifyColumn($this->getExpiredAtColumn());
   }
