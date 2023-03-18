@@ -13,8 +13,18 @@ composer require neon/model-publishable
 ## Usage
 ### Database
 In the database, Publishable needs two datetime fields:
-* published_at
-* expired_at
+* published_at to store from when we should show.
+    ```
+    $table->timestamp('published_at')
+      ->nullable()
+      ->default(null);
+    ```
+* expired_at to store when the record will be expired.
+    ```
+    $table->timestamp('expired_at')
+      ->nullable()
+      ->default(null);
+    ```
 Both of them nullable with the default value NULL.
 
 ### Model

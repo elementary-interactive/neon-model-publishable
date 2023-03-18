@@ -2,7 +2,11 @@
 
 namespace Neon\Models\Scopes;
 
-class PublishedScope
+use Illuminate\Database\Eloquent\Scope;
+use \Illuminate\Database\Eloquent\Builder;
+use \Illuminate\Database\Eloquent\Model;
+
+class PublishedScope implements Scope
 {
   /**
    * All of the extensions to be added to the builder.
@@ -41,7 +45,7 @@ class PublishedScope
         function ($sub_query) use ($model) {
           $sub_query
             ->whereNull($model->getQualifiedExpiredAtColumn())
-            ->orWhere($model->getQualifiedExpirededAtColumn(), '>', now());
+            ->orWhere($model->getQualifiedExpiredAtColumn(), '>', now());
         }
       );
   }
